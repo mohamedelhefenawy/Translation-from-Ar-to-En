@@ -100,6 +100,6 @@ The BLEU score ranges from 0 to 100, with 100 being a perfect match between the 
 ## Example Output
 The output of the BLEU score computation will look something like this:
 ```bash
-BLEU score: 45.67
+BLEU score: 46.9
 ```
 This score indicates that the generated translations have a good quality compared to the reference translations.
