@@ -23,8 +23,6 @@ Before running the notebook, ensure you have the following libraries installed:
 
 You can install these libraries using pip:
 
-```bash
-pip install transformers datasets torch sacrebleu tqdm
 
 Follow the instructions in the notebook to:
 
@@ -35,7 +33,7 @@ Evaluate the generated translations using BLEU score.
 Example Code
 Below is a snippet of the function used to generate translations in batches:
 
-
+```bash
 def generate_translations_in_batches(model, tokenizer, texts, batch_size=32, max_length=256):
     translations = []
     for i in tqdm(range(0, len(texts), batch_size)):
