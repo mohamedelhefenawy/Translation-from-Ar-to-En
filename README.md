@@ -21,8 +21,20 @@ Before running the notebook, ensure you have the following libraries installed:
 - `sacrebleu`
 - `tqdm`
 
-You can install these libraries using pip:
+## Custom Usage
 
+Import Libraries
+
+```bash
+import pandas as pd
+from transformers import AutoModelForSeq2SeqLM ,TrainingArguments, AutoTokenizer , DataCollatorForSeq2Seq,Seq2SeqTrainer , Trainer , MarianMTModel, MarianTokenizer
+from datasets import Dataset , load_dataset,load_metric
+import tensorflow as tf
+import json
+import torch
+from tqdm import tqdm
+import ast
+```exit
 
 Follow the instructions in the notebook to:
 
@@ -44,3 +56,4 @@ def generate_translations_in_batches(model, tokenizer, texts, batch_size=32, max
         batch_translations = [tokenizer.decode(output, skip_special_tokens=True) for output in outputs]
         translations.extend(batch_translations)
     return translations
+```exit
