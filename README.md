@@ -34,13 +34,8 @@ import json
 import torch
 from tqdm import tqdm
 import ast
+```
 
-#!/bin/bash
-
-# Your script content
-
-# The line that outputs "Script completed."
-echo "Script completed."
 
 # Check if the phrase "Script completed." is present in the output
 if echo "Script completed." | grep -q "Script completed."; then
