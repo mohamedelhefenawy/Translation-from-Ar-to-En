@@ -36,7 +36,26 @@ from tqdm import tqdm
 ```
 
 
+## Data Processing Function
+The following function is used to process the input data for translation. It tokenizes both the input texts in Arabic and the target texts in English, ensuring they are within the maximum length constraints. This function is essential for preparing the data before feeding it into the translation model.
 
+```bash
+def process(example):
+  
+# Extract input and target texts
+    inputs = [ss for ss in example['عربي']]
+    target = [ss for ss in example['English']]
+    
+    # Tokenize the input texts
+    model_inputs = tokenizer(inputs, max_length=max_input, truncation=True)
+    
+    # Tokenize the target texts
+    with tokenizer.as_target_tokenizer():
+        labels = tokenizer(target, max_length=max_output, truncation=True)
+    
+    # Assign the tokenized target texts to the 'labels' key in the model inputs
+    model_inputs['labels'] = labels['input_ids']
+```
 
 
 Follow the instructions in the notebook to:
