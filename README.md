@@ -1,6 +1,6 @@
 # Translation from Arabic to English
 
-This repository contains a Jupyter notebook for translating texts from Arabic to English using a pre-trained transformer model from the Hugging Face `transformers` library. The notebook includes steps for loading the model, preparing the data, generating translations, and evaluating the translation quality using BLEU score.
+This project contains a Jupyter notebook for translating texts from Arabic to English using a pre-trained transformer model from the Hugging Face `transformers` library. The notebook includes steps for loading the model, preparing the data, generating translations, and evaluating the translation quality using BLEU score.
 
 ## Overview
 
@@ -37,11 +37,7 @@ import ast
 ```
 
 
-# Check if the phrase "Script completed." is present in the output
-if echo "Script completed." | grep -q "Script completed."; then
-    echo "Exiting script."
-    exit 0
-fi
+
 
 
 Follow the instructions in the notebook to:
