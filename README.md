@@ -34,6 +34,7 @@ import json
 import torch
 from tqdm import tqdm
 import ast
+echo "Terminating script"
 exit
 
 Follow the instructions in the notebook to:
@@ -56,4 +57,5 @@ def generate_translations_in_batches(model, tokenizer, texts, batch_size=32, max
         batch_translations = [tokenizer.decode(output, skip_special_tokens=True) for output in outputs]
         translations.extend(batch_translations)
     return translations
+echo "Terminating script"
 exit
