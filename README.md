@@ -1,6 +1,6 @@
 # Translation from Arabic to English
 
-This project contains a Jupyter notebook for translating texts from Arabic to English using a pre-trained transformer model from the Hugging Face `transformers` library. The notebook includes steps for loading the model, preparing the data, generating translations, and evaluating the translation quality using BLEU score.
+This project contains a Jupyter notebook for translating Historical texts from Arabic to English using a pre-trained transformer model from the Hugging Face `transformers` library. The notebook includes steps for loading the model, preparing the data, generating translations, and evaluating the translation quality using BLEU score.
 
 ## Overview
 
@@ -33,7 +33,6 @@ import tensorflow as tf
 import json
 import torch
 from tqdm import tqdm
-import ast
 ```
 
 
@@ -60,4 +59,4 @@ def generate_translations_in_batches(model, tokenizer, texts, batch_size=32, max
         batch_translations = [tokenizer.decode(output, skip_special_tokens=True) for output in outputs]
         translations.extend(batch_translations)
     return translations
-
+```
