@@ -60,12 +60,19 @@ def process(example):
 
 Follow the instructions in the notebook to:
 
-Load the pre-trained translation model and tokenizer.
-Prepare your input data (source texts in Arabic).
-Generate translations for the input data.
-Evaluate the generated translations using BLEU score.
-Example Code
-Below is a snippet of the function used to generate translations in batches:
+## Evaluation of Translations
+The evaluation of the generated translations is an essential part of the process to ensure the quality and accuracy of the translations. In this project, we use the BLEU (Bilingual Evaluation Understudy) score to evaluate the translations.
+
+## BLEU Score
+The BLEU score is a metric for evaluating a generated sentence to a reference sentence. It is commonly used in machine translation to compare machine-generated translations against human translations.
+
+## Evaluation Process
+To evaluate the translations, follow these steps:
+
+Generate Translations: Use the translation model to generate translations for the input texts.
+Compute BLEU Score: Compare the generated translations to the reference translations using the BLEU score.
+Example Evaluation Code
+Here is an example of how to compute the BLEU score for the generated translations:
 
 ```bash
 def generate_translations_in_batches(model, tokenizer, texts, batch_size=32, max_length=256):
@@ -79,3 +86,20 @@ def generate_translations_in_batches(model, tokenizer, texts, batch_size=32, max
         translations.extend(batch_translations)
     return translations
 ```
+
+
+
+## Interpretation of BLEU Score
+The BLEU score ranges from 0 to 100, with 100 being a perfect match between the generated translation and the reference translation. Generally, a higher BLEU score indicates better translation quality.
+
+- `0-10: Poor translation quality`
+- `10-30: Fair translation quality`
+- `30-50: Good translation quality`
+- `50-100: Excellent translation quality`
+
+## Example Output
+The output of the BLEU score computation will look something like this:
+```bash
+BLEU score: 45.67
+```
+This score indicates that the generated translations have a good quality compared to the reference translations.
